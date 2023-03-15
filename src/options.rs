@@ -73,13 +73,13 @@ impl Options {
   }
 
   pub(crate) fn rpc_url(&self) -> String {
-    if self.rpc_url.is_none() { {
+    if self.rpc_url.is_none() {
       format!(
         "127.0.0.1:{}/wallet/{}",
         self.chain().default_rpc_port(),
         self.wallet
       )
-     } else{
+    } else{
       format!("{}/wallet/{}",
       self.rpc_url.clone().unwrap(), 
       self.wallet)
